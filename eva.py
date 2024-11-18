@@ -31,9 +31,9 @@ def send_message():
     """
 
     current_hour = datetime.datetime.now(moscow_tz).hour
-    if current_hour == 10:
+    if current_hour >= 10 and current_hour < 18:
         bot.send_message(CHAT_ID, morning_message, parse_mode="Markdown")
-    elif current_hour == 18:
+    elif current_hour >= 17:
         bot.send_message(CHAT_ID, evening_message, parse_mode="Markdown")
 
 # Выполнение отправки сообщения
